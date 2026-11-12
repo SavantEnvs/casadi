@@ -1,0 +1,8 @@
+project: savantenvs/casadi
+target: fuzz_sparsity_mtx
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_sparsity_mtx/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_sparsity_mtx
+    libfuzzer: true

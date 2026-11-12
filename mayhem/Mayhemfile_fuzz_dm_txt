@@ -1,0 +1,8 @@
+project: savantenvs/casadi
+target: fuzz_dm_txt
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_dm_txt/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_dm_txt
+    libfuzzer: true

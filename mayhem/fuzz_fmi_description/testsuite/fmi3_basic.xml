@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription fmiVersion="3.0" modelName="test3" instantiationToken="{abcd}" description="seed3">
+  <ModelExchange modelIdentifier="test3"/>
+  <DefaultExperiment startTime="0.0" stopTime="2.0"/>
+  <ModelVariables>
+    <Float64 name="time" valueReference="0" causality="independent" variability="continuous"/>
+    <Float64 name="u" valueReference="1" causality="input" variability="continuous" start="1"/>
+    <Float64 name="x" valueReference="2" causality="local" variability="continuous" initial="exact" start="0"/>
+    <Float64 name="der(x)" valueReference="3" causality="local" variability="continuous" derivative="2"/>
+    <Float64 name="y" valueReference="4" causality="output" variability="continuous" initial="calculated"/>
+    <Int32 name="k" valueReference="5" causality="parameter" variability="fixed" start="4"/>
+    <Boolean name="flag" valueReference="6" causality="parameter" variability="fixed" start="false"/>
+  </ModelVariables>
+  <ModelStructure>
+    <Output valueReference="4" dependencies="2 1"/>
+    <ContinuousStateDerivative valueReference="3" dependencies="2 1"/>
+    <InitialUnknown valueReference="3" dependencies="2"/>
+  </ModelStructure>
+</fmiModelDescription>
